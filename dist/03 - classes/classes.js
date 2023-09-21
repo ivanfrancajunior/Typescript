@@ -115,3 +115,75 @@ class Pessoa {
 const seuRegino = new Pessoa();
 seuRegino.idade = 10;
 console.log(seuRegino);
+//static atributes/ methods - atribui caracteriticas e metodos à classe e não as  intâncias dela.(faz com q os métodos e as caracteristicas sejam da classe e não das cópias)
+class Matematica {
+    static areaCirc(raio) {
+        return this.PI * raio * raio;
+    }
+}
+Matematica.PI = 3.1416;
+console.log(Matematica.areaCirc(4));
+/*
+
+CLASSES ABSTRATAS
+
+É a ideia ou conceito que gera as caracteristicas ações de uma classe.
+Possuem um método abstrato que pode não ser implementado propiamente por elas mas quem herda dessa classe tem q executar
+Não pode ser instânciada
+*/
+class Calculo {
+    constructor() {
+        this.resultado = 0;
+    }
+    getResultado() {
+        return this.resultado;
+    }
+}
+class Soma extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((t, a) => t + a);
+    }
+}
+class Multiplicacao extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((t, a) => t * a);
+    }
+}
+let c1 = new Soma();
+c1.executar(2, 3, 4, 5);
+console.log(c1.getResultado());
+c1 = new Multiplicacao();
+c1.executar(2, 3, 4, 5);
+console.log(c1.getResultado());
+//private constructor / singleton pattern
+/*
+  USO: Normalmente você usa quando você quer ter apenas uma instância da classe e ainda assim quer trabalhar com métodos e atributos.
+  
+  Funciona criando um propio atributo (instance) isntanciando a classe e um método acessivel apenas pela classe (static method)
+  fornecendo  acesso aos demais métodos contidos na classe sem a instanciar diretamente.
+  
+  Implementado em conexões com bancos de dados.
+  
+*/
+class Unico {
+    constructor() { }
+    static getIntance() {
+        return Unico.instance;
+    }
+    agora() {
+        return new Date();
+    }
+}
+Unico.instance = new Unico();
+console.log(Unico.getIntance().agora());
+class AguaGamer {
+    constructor(modelo, sufixo, nome) {
+        this.sufixo = sufixo;
+        this.modelo = modelo;
+        this.nome = nome;
+    }
+}
+const positivoAguaGamer = new AguaGamer("500ml", "Gamer", 'Positivo Hidratacao');
+// positivoAguaGamer.modelo = '1l' //❌ propriedade apenas para ser lida e absorvida rs...
+// positivoAguaGamer.sufixo = 'Gamer n faz nda mais caro' //❌ propriedade apenas para ser lida e absorvida rs...
+// positivoAguaGamer.nome = 'você ja entendeu...  '
