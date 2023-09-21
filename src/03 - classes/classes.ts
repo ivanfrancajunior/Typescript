@@ -77,7 +77,6 @@ class Carro {
 
 const carro1 = new Carro("Ford", "Ka", 185);
 
-
 Array(50)
   .fill(0)
   .forEach(() => carro1.acelerar());
@@ -124,7 +123,6 @@ f40.acelerar();
 f40.acelerar();
 
 //getters & Setters
-
 class Pessoa {
   private _idade: number = 0;
 
@@ -138,3 +136,6 @@ class Pessoa {
     }
   }
 }
+const seuRegino = new Pessoa();
+seuRegino.idade = 10;
+console.log(seuRegino);

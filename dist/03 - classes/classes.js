@@ -112,3 +112,6 @@ class Pessoa {
         }
     }
 }
+const seuRegino = new Pessoa();
+seuRegino.idade = 10;
+console.log(seuRegino);
