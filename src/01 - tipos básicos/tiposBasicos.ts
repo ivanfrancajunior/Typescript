@@ -19,7 +19,6 @@ enum Week {
   sabado,
 }
 // console.log(Week.domingo.toString());
-
 const qlqrCoisa: any = "posso ser qlqr valor";
 
 //funções como tipos
@@ -38,7 +37,6 @@ const pessoa: { name: string; age: number } = {
 };
 
 //type alias
-
 type Funcionario = {
   nome: string;
   idade: number;
@@ -67,7 +65,6 @@ const funcionario: Funcionario = {
 console.log(funcionario.baterPonto(7));
 
 //Union types
-
 let notas: string | number = 5;
 notas = "7";
 
