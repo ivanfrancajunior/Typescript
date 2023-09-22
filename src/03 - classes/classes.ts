@@ -157,8 +157,9 @@ console.log(Matematica.areaCirc(4));
 CLASSES ABSTRATAS 
 
 É a ideia ou conceito que gera as caracteristicas ações de uma classe. 
-Possuem um método abstrato que pode não ser implementado propiamente por elas mas quem herda dessa classe tem q executar
-Não pode ser instânciada
+Possuem um método abstrato que pode ou não ser implementado propiamente por elas mas quem herda dessa classe tem, q implementar necessariamente este método.
+
+A classe NÃO pode ser instânciada!
 */
 
 abstract class Calculo {
