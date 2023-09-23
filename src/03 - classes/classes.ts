@@ -149,8 +149,12 @@ class Matematica {
     return this.PI * raio * raio;
   }
 }
+class outraMatematica extends Matematica{
 
-console.log(Matematica.areaCirc(4));
+}
+outraMatematica.areaCirc(4)
+
+console.log(Matematica.areaCirc(10));
 
 /*
 
@@ -217,16 +221,3 @@ class Unico {
 }
 console.log(Unico.getIntance().agora());
 
-class AguaGamer {
-  public readonly modelo: string;
-  public readonly nome: string;
-  constructor(modelo: string, public readonly sufixo: string, nome:string) {
-    this.modelo = modelo;
-    this.nome = nome
-  }
-}
-const positivoAguaGamer = new AguaGamer("500ml", "Gamer",'Positivo Hidratacao');
-
-// positivoAguaGamer.modelo = '1l' //❌ propriedade apenas para ser lida e absorvida rs...
-// positivoAguaGamer.sufixo = 'Gamer n faz nda mais caro' //❌ propriedade apenas para ser lida e absorvida rs...
-// positivoAguaGamer.nome = 'você ja entendeu...  '

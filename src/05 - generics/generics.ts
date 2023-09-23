@@ -1,5 +1,5 @@
 /*
-USO: Embora  a ideia seja ter tipos mais flexiveis e genéricos, não queremos usar any pq dessa forma, ficamos simplesmente sem recursos para validar o valor de alguma forma por parte do complilador e  assim deixand q erros passem.
+USO: Embora  a ideia seja ter tipos mais flexiveis e genéricos, não queremos usar any pq dessa forma, ficamos simplesmente sem recursos para validar o valor de alguma forma por parte do compilador e  assim deixando q erros passem.
 
 Fora isso a gente perde o autocomplete.
 */
