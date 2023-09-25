@@ -122,7 +122,10 @@ class Matematica {
     }
 }
 Matematica.PI = 3.1416;
-console.log(Matematica.areaCirc(4));
+class outraMatematica extends Matematica {
+}
+outraMatematica.areaCirc(4);
+console.log(Matematica.areaCirc(10));
 /*
 
 CLASSES ABSTRATAS
@@ -177,14 +180,3 @@ class Unico {
 }
 Unico.instance = new Unico();
 console.log(Unico.getIntance().agora());
-class AguaGamer {
-    constructor(modelo, sufixo, nome) {
-        this.sufixo = sufixo;
-        this.modelo = modelo;
-        this.nome = nome;
-    }
-}
-const positivoAguaGamer = new AguaGamer("500ml", "Gamer", 'Positivo Hidratacao');
-// positivoAguaGamer.modelo = '1l' //❌ propriedade apenas para ser lida e absorvida rs...
-// positivoAguaGamer.sufixo = 'Gamer n faz nda mais caro' //❌ propriedade apenas para ser lida e absorvida rs...
-// positivoAguaGamer.nome = 'você ja entendeu...  '
