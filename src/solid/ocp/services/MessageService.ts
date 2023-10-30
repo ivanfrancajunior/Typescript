@@ -1,5 +1,5 @@
 export class MessageService {
-    sendMessage(message: string): void {
-      console.log("Mensagem enviada!: ", message);
-    }
+  sendMessage(message: string): void {
+    console.log("Mensagem enviada!: ", message);
   }
+}
