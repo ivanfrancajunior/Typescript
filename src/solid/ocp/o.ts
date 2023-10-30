@@ -3,15 +3,17 @@
     Diz que uma classe tem um e apenas um motivo para mudar ou seja, uma e apenas uma responsabilidade bem definida no sistema  sem acumular funcionalidades não relacionadas. 
 
 */
-console.log('🔥');
+console.log("🔥");
 
+import { TenPercentDiscount } from "./entities/Discount";
 import { Order } from "./entities/Order";
 import { Product } from "./entities/Products";
 import { ShoppingCart } from "./entities/ShoppingCart";
 import { MessageService } from "./services/MessageService";
 import { PersistencyService } from "./services/PersistencyService";
 
-const shoppingCart = new ShoppingCart();
+const tenPercentDiscount = new TenPercentDiscount();
+const shoppingCart = new ShoppingCart(tenPercentDiscount);
 const messaging = new MessageService();
 const persistency = new PersistencyService();
 const order = new Order(shoppingCart, messaging, persistency);
@@ -22,6 +24,7 @@ shoppingCart.addItem(new Product("Tênis", 249.9));
 
 console.log(shoppingCart.items);
 console.log(shoppingCart.total());
+console.log(shoppingCart.totalWhithDiscount());
 console.log(order.orderStatus);
 order.checkout();
 console.log(order.orderStatus);
