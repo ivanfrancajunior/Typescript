@@ -5,13 +5,14 @@
 */
 console.log("🔥");
 
-import { TenPercentDiscount } from "./entities/Discount";
+import { TenPercentDiscount, NoDiscount } from "./entities/Discount";
 import { Order } from "./entities/Order";
 import { Product } from "./entities/Products";
 import { ShoppingCart } from "./entities/ShoppingCart";
 import { MessageService } from "./services/MessageService";
 import { PersistencyService } from "./services/PersistencyService";
 
+// const noDiscount = new NoDiscount();
 const tenPercentDiscount = new TenPercentDiscount();
 const shoppingCart = new ShoppingCart(tenPercentDiscount);
 const messaging = new MessageService();
