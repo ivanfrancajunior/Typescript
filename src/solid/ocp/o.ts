@@ -1,7 +1,7 @@
 /*
-    principio da responsabilidade única: 
-    Diz que uma classe tem um e apenas um motivo para mudar ou seja, uma e apenas uma responsabilidade bem definida no sistema  sem acumular funcionalidades não relacionadas. 
-
+   Open/Close principle: 
+    Diz que as entidades ou métodos devem estar fechadas modificações e abertas para extenções. 
+    Ou seja você criar uma classe pra ser extendida mas n deveria modificar a clase base.
 */
 console.log("🔥");
 

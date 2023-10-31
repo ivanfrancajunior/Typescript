@@ -1,9 +1,14 @@
 /*
-    Principio da substituição de Liskov: 
+    Principio da Inversão de dependência: 
 
-    Prop~e que subtipos precisam ser substituiveis por seus tipos base, em outras palavras se um programa precisa de uma classe Animal, a classe Cachorro uma vez que é extende da classe animal, deve possuir caracteristicas necessárias para  atender as necessidades deste programa. 
-
-    Uma vez que o ts tem o typesafe o conceito fica inviavel implementar nesse exemplo, uma vez que o single responsibility ja foi aplicado, porém da pra se observar a confirmação deste principio na classe 'Discount', onde independende de qual vai ser ussada, todas servem da mesma forma na implementação do ecemplo. 
+    Propõe que modulos de alto nivel não devem depender de modulos de baixo nivel. Ambos devem depender de abstrações. 
+      
+    * classe de alto nivel: classes que gerenciam as classes de baixo nivel.  
+    * classe de baixo nivel classes que executam tarefas.
+     
+    A ideia aqui é manter a aplicação desacoplada o maximo possivel, sendo assim depender propiamente de uma classe, não é uma boa opção mas uma sim de interface que as  classes possam  implementar, se torna a escolha mais acertiva.
+    
+    No resumo da opera, queremos que nosssa classe dependam de uma interface e não de uma classe.
 
 */
 console.log("🔥");

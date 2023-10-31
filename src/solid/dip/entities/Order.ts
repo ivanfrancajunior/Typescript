@@ -1,9 +1,5 @@
 /*
-Open/Close principle: 
 
-Diz que as entidades ou métodos devem estar fechadas modificações e abertas para extenções. 
-
-Ou seja você criar uma classe pra ser extendida mas n deveria modificar a clase base.
 
 ---------------------------------------------------------------------------
 
@@ -13,18 +9,18 @@ Problemática: E se fosse necessário incluir descontos nos preços como isso se
 
 */
 
-import { MessageService } from "../services/MessageService";
-import { PersistencyService } from "../services/PersistencyService";
-import { ShoppingCart } from "./ShoppingCart";
+import { MessageServiceProtocol } from "./interfaces/messagingProtocol";
+import { PersistencyProtocol } from "./interfaces/persistencyProtocol";
+import { shoppingCartProtocol } from "./interfaces/shoppingCartProtocol";
 import { OrderStatus } from "./interfaces/types";
 
 export class Order {
   private _orderStatus: OrderStatus = "open";
 
   constructor(
-    private readonly cart: ShoppingCart,
-    private readonly messaging: MessageService,
-    private readonly persistency: PersistencyService
+    private readonly cart: shoppingCartProtocol,
+    private readonly messaging: MessageServiceProtocol,
+    private readonly persistency: PersistencyProtocol
   ) {}
 
   get orderStatus(): Readonly<OrderStatus> {
