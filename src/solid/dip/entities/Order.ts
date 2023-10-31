@@ -32,9 +32,9 @@ export class Order {
       this.messaging.sendMessage("Seu carrinho está vazio");
       return;
     }
+    this._orderStatus = "closed";
     this.messaging.sendMessage("seu pedido foi recebido");
     this.persistency.saveOrder();
     this.cart.clear();
-    this._orderStatus = "closed";
   }
 }
